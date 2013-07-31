@@ -16,6 +16,8 @@ unmanagedResourceDirectories in Test <+= (baseDirectory) { _ / "src/main/webapp"
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
+configurationFiles in container.Configuration := Seq(file("jetty-env.xml"))
+
 libraryDependencies ++= {
   val liftVersion = "2.5"
   Seq(
